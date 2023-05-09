@@ -58,6 +58,7 @@ num_posts = mutares_emp_df_copy.shape[0]
 st.write(f'Total number of posts found: ', str(num_posts))
 
 if  num_posts>0:
+	mutares_emp_df_copy.reset_index(drop=True, inplace=True)
 	splits = mutares_emp_df_copy.groupby(mutares_emp_df_copy.index // 3)
 	for _, frames in splits:
 		frames = frames.reset_index(drop=True)
