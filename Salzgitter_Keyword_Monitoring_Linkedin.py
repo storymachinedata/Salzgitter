@@ -15,7 +15,7 @@ with open('style.css') as f:
 # with logo:
 # 	st.image(storymch_logo, width=200)
    
-st.markdown("<h1 style='text-align: center; color: green;'>FOM REAL ESTATE: Linkedin posts from Keywords</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: green;'>Salzgitter: Linkedin posts from Keywords and Accounts</h1>", unsafe_allow_html=True)
 
 
 col1, col2, col3 = st.columns(3)
@@ -36,7 +36,7 @@ with col3:
 						'Posts: Oldest First'))
 
 
-kath_brienne_path = 'https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/4zccV515IfgaDuMQlbqMOA/fom_keywords_5_11.csv'
+kath_brienne_path = 'https://cache1.phantombooster.com/UhrenaxfEnY/6kXntjIlHuSrHxCR1XjNWg/Salzgitter_keywords_6_26.csv'
 
 
 
@@ -59,7 +59,7 @@ kath_brienne_df_copy = kath_brienne_df.copy()
 
 #
 
-makes = ['Immobilienwirtschaft','Immobilien','Projektentwicklung','Asset Management','Immobilienbewertung','Baurecht','Stadtentwicklung','Facility Management','Investmentstrategien','Nachhaltigkeit','Wohnimmobilien','Gewerbeimmobilien','Immobilienfinanzierung','Risikomanagement','Internationales Immobilienmanagement']
+makes = ['Grüner Stahl','Green Steel','Salzgitter AG','Direktredduktionsanlage','Salcos','Elektrolichtbogenofen','Grüner Wasserstoff','Industrielle Transformation','Stahlstandort Deutschland','Wasserstoffwirtschaft','Industrielle Dekarbonisierung','Eisenschwamm','Stahlschrott','Schrottrecycling','Circular Economy','Circularity','CO2-Armer Stahl','Klimaneutraler Stahl','Scope 3','Gunnar Groebler']
 make_choice = st.sidebar.selectbox('Select your keyword:', makes)
 
 kath_brienne_df_copy= kath_brienne_df.loc[kath_brienne_df['keyword'] == make_choice]
