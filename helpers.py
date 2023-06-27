@@ -21,23 +21,26 @@ filters = { 'Total Interaction: High to Low' : ['Total Interactions', False],
             'Posts: Oldest First': ['date',True]}
 
 
-mapper = { 'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Immobilienwirtschaft&origin=FACETED_SEARCH&sid=q*e&sortBy=%22relevance%22' : 'Immobilienwirtschaft' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Immobilien&origin=GLOBAL_SEARCH_HEADER&sid=nk6&sortBy=%22relevance%22' : 'Immobilien' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Projektentwicklung&origin=GLOBAL_SEARCH_HEADER&sid=wdo&sortBy=%22relevance%22' : 'Projektentwicklung' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Asset%20Management&origin=GLOBAL_SEARCH_HEADER&sid=Ihf&sortBy=%22relevance%22' : 'Asset Management' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Immobilienbewertung&origin=GLOBAL_SEARCH_HEADER&sid=~n%40&sortBy=%22relevance%22' : 'Immobilienbewertung' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Baurecht&origin=GLOBAL_SEARCH_HEADER&sid=2x7&sortBy=%22relevance%22' : 'Baurecht' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Stadtentwicklung&origin=GLOBAL_SEARCH_HEADER&sid=54A&sortBy=%22relevance%22' : 'Stadtentwicklung' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Facility%20Management&origin=GLOBAL_SEARCH_HEADER&sid=8_9&sortBy=%22relevance%22' : 'Facility Management' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Investmentstrategien&origin=GLOBAL_SEARCH_HEADER&sid=Y5O&sortBy=%22relevance%22' : 'Investmentstrategien' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Nachhaltigkeit&origin=GLOBAL_SEARCH_HEADER&sid=Za!&sortBy=%22relevance%22' : 'Nachhaltigkeit' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Wohnimmobilien&origin=GLOBAL_SEARCH_HEADER&sid=8~B&sortBy=%22relevance%22' : 'Wohnimmobilien' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=gewerbeimmobilien&origin=FACETED_SEARCH&searchId=723f8104-fd1f-4384-9966-1a069a70b6a4&sid=edA' : 'Gewerbeimmobilien' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&heroEntityKey=urn%3Ali%3Aorganization%3A37373115&keywords=immobilienfinanzierung&origin=FACETED_SEARCH&position=0&searchId=49d6345a-12ea-48dc-a547-0a89f6c9438c&sid=_*9' : 'Immobilienfinanzierung' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Risikomanagement&origin=GLOBAL_SEARCH_HEADER&sid=TcY' : 'Risikomanagement' ,
-            'https://www.linkedin.com/search/results/content/?datePosted=%22past-week%22&keywords=Internationales%20Immobilienmanagement&origin=GLOBAL_SEARCH_HEADER&sid=mH~' : 'Internationales Immobilienmanagement' ,
-            'https://www.linkedin.com/company/fomrealestate/?originalSubdomain=de' : 'FOM REAL ESTATE',
-            'https://www.linkedin.com/in/prof-reinhard-walter-81b00922/?originalSubdomain=de':'Prof. Dr. Reinhard Walter'
+mapper = { 'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=gr%C3%BCner%20Stahl&origin=FACETED_SEARCH&sid=rN7&sortBy=%22date_posted%22' : 'Grüner Stahl' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=green%20steel&origin=GLOBAL_SEARCH_HEADER&sid=Rk7&sortBy=%22date_posted%22' : 'Green Steel' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=salzgitter%20ag&origin=FACETED_SEARCH&sid=xw)&sortBy=%22date_posted%22' : 'Salzgitter AG' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Direktredduktionsanlage&origin=GLOBAL_SEARCH_HEADER&sid=wRU&sortBy=%22date_posted%22' : 'Direktredduktionsanlage' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Salcos&origin=GLOBAL_SEARCH_HEADER&sid=f((&sortBy=%22date_posted%22' : 'Salcos' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Elektrolichtbogenofen&origin=GLOBAL_SEARCH_HEADER&sid=F4z&sortBy=%22date_posted%22' : 'Elektrolichtbogenofen' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=gr%C3%BCner%20Wasserstoff&origin=GLOBAL_SEARCH_HEADER&sid=rrd&sortBy=%22date_posted%22' : 'Grüner Wasserstoff' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=industrielle%20Transformation&origin=GLOBAL_SEARCH_HEADER&sid=vUP&sortBy=%22date_posted%22' : 'Industrielle Transformation' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Stahlstandort%20Deutschland&origin=GLOBAL_SEARCH_HEADER&sid=%3BiW&sortBy=%22date_posted%22' : 'Stahlstandort Deutschland' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Wasserstoffwirtschaft&origin=GLOBAL_SEARCH_HEADER&sid=A8O&sortBy=%22date_posted%22' : 'Wasserstoffwirtschaft' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=industrielle%20Dekarbonisierung&origin=GLOBAL_SEARCH_HEADER&sid=5Lc&sortBy=%22date_posted%22' : 'Industrielle Dekarbonisierung' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Eisenschwamm%20&origin=GLOBAL_SEARCH_HEADER&sid=c0H&sortBy=%22date_posted%22' : 'Eisenschwamm' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Stahlschrott&origin=GLOBAL_SEARCH_HEADER&sid=QpL&sortBy=%22date_posted%22' : 'Stahlschrott' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Schrottrecycling%20&origin=GLOBAL_SEARCH_HEADER&sid=wG8&sortBy=%22date_posted%22' : 'Schrottrecycling' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Circular%20Economy%20&origin=GLOBAL_SEARCH_HEADER&sid=*D%40&sortBy=%22date_posted%22' : 'Circular Economy' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Circularity&origin=GLOBAL_SEARCH_HEADER&sid=~zu&sortBy=%22date_posted%22' : 'Circularity',
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=co2-armer%20Stahl%20&origin=GLOBAL_SEARCH_HEADER&sid=W2h&sortBy=%22date_posted%22':'CO2-Armer Stahl',
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=klimaneutraler%20stahl%20&origin=GLOBAL_SEARCH_HEADER&sid=z(.&sortBy=%22date_posted%22' : 'Klimaneutraler Stahl' ,
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Scope%203%20&origin=GLOBAL_SEARCH_HEADER&sid=1Af&sortBy=%22date_posted%22' : 'Scope 3',
+            'https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Gunnar%20Groebler&origin=GLOBAL_SEARCH_HEADER&sid=eP2&sortBy=%22date_posted%22':'Gunnar Groebler'
 
             }
 
@@ -101,7 +104,32 @@ def read_file_sp(filename):
     return df
 
 
+def read_file_account(filename):
+    df =pd.read_csv(filename)
+    df = df.dropna(how='any', subset=['postContent'])
+    # df.drop(['error', 'timestamp', 'sharedPostUrl','sharedPostProfileUrl',
+    #         'sharedJobUrl','videoUrl','sharedPostCompanyUrl'], axis=1, inplace=True)
 
+    df['postDate'] = df.postUrl.apply(getActualDate)
+    df = df.dropna(how='any', subset=['postDate'])
+    df['date'] =  pd.to_datetime(df['postDate'])
+
+    #df['company_name'] =  df.profileUrl.apply(lambda x : mapper[x])
+    
+
+    df.drop_duplicates(subset=['postUrl'], inplace=True)
+    df = df.reset_index(drop=True)
+    df['Total Interactions'] = df['likeCount'] + df['commentCount']
+    df['likeCount'] = df['likeCount'].fillna(0)
+    df['commentCount'] = df['commentCount'].fillna(0)
+    df['Total Interactions'] = df['Total Interactions'].fillna(0)
+    df['likeCount'] = df['likeCount'].astype(int)
+    df['commentCount'] = df['commentCount'].astype(int)
+    df['Total Interactions'] = df['Total Interactions'].astype(int)
+    #df['Keyword']  = df['category']
+    df['yy-dd-mm'] = pd.to_datetime(df.date).dt.strftime('%Y/%m/%d')
+    
+    return df
 
 
 
@@ -203,7 +231,29 @@ def printFunction_posts(i, rows, dataframe):
     
 
 
+def printFunction_accounts(i, rows, dataframe):
+    if not pd.isnull(rows['profileUrl']):
+        
+        st.write(dataframe['profileUrl'][i])
+        st.write('Content Type: ', rows['type']) #postType
+        st.write('-----------')
+        if 'imgUrl' in dataframe.columns:
+            # if rows['imgUrl']:
+            #     st.image(rows['imgUrl'], width=230)
 
+            if not pd.isnull(rows['imgUrl']):
+                        st.image(rows['imgUrl'])
+
+        st.info(rows['postContent'])  #postrowsontent
+        st.write('Total Interactions 📈:  ',rows['Total Interactions']) #totInterarowstions
+        st.write('Likes 👍:  ',rows['likeCount']) #totInterarowstions
+        st.write('Comments 💬:  ',rows['commentCount']) #totInterarowstions
+        #st.write('Arowstion 📌:  ',rows['arowstion']) #totInterarowstions
+        st.write('Publish Date & Time 📆:         ',rows['postDate']) #publishDate
+        with st.expander('Link to this Post 📮'):
+                st.write(rows['postUrl']) #linktoPost
+        with st.expander('Link to  Profile 🔗'):
+                st.write(rows['profileUrl']) #linktoProfile
 
 
 def printError():
