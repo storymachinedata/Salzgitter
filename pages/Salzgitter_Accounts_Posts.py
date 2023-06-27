@@ -16,7 +16,7 @@ with open('style.css') as f:
 # with logo:
 # 	st.image(storymch_logo, width=200)
    
-st.markdown("<h1 style='text-align: center; color: cyan;'>LinkedIn posts from the Prof.Dr. Reinhard Walter </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: cyan;'>LinkedIn posts from the Salzgitter Acccounts </h1>", unsafe_allow_html=True)
 
 
 
@@ -39,10 +39,12 @@ with col3:
 
 
 
-mutares_emp_path = 'https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/ZhtnptfvKOjx6rVftQrRvQ/PROF_WALTER_5_25.csv'
+mutares_emp_path = 'https://cache1.phantombooster.com/UhrenaxfEnY/JLfiphEk8jlUgrwTfub8MQ/salzgitter_accounts_6_26.csv'
 
 
-mutares_emp_main = read_file_sp(mutares_emp_path)
+#mutares_emp_main = read_file_sp(mutares_emp_path)
+mutares_emp_main = read_file_account(mutares_emp_path)
+
 
 mutares_emp_df = mutares_emp_main[mutares_emp_main['date']>=(dt.datetime.now()-dt.timedelta(days=filter_day))]
 
@@ -53,6 +55,9 @@ mutares_emp_df = mutares_emp_df.sort_values(by = ['yy-dd-mm','Total Interactions
 
 	
 mutares_emp_df = mutares_emp_df.reset_index(drop=True)
+
+
+
 mutares_emp_df_copy = mutares_emp_df.copy()
 num_posts = mutares_emp_df_copy.shape[0]
 st.write(f'Total number of posts found: ', str(num_posts))
@@ -64,8 +69,8 @@ if  num_posts>0:
 		thumbnails = st.columns(frames.shape[0])
 		for i, c in frames.iterrows():
 			with thumbnails[i]:
-				#printFunction_search(i, c, frames)           
-				printFunction_posts(i, c, frames)        
+				printFunction_accounts(i, c, frames)           
+				#printFunction_posts(i, c, frames)        
 else:
 	printError()
 
