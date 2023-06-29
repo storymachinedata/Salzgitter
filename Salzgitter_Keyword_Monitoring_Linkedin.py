@@ -59,10 +59,16 @@ kath_brienne_df_copy = kath_brienne_df.copy()
 
 #
 
-makes = ['Grüner Stahl','Green Steel','Salzgitter AG','Direktredduktionsanlage','Salcos','Elektrolichtbogenofen','Grüner Wasserstoff','Industrielle Transformation','Stahlstandort Deutschland','Wasserstoffwirtschaft','Industrielle Dekarbonisierung','Eisenschwamm','Stahlschrott','Schrottrecycling','Circular Economy','Circularity','CO2-Armer Stahl','Klimaneutraler Stahl','Scope 3','Gunnar Groebler']
+makes = ['All','Grüner Stahl','Green Steel','Salzgitter AG','Direktredduktionsanlage','Salcos','Elektrolichtbogenofen','Grüner Wasserstoff','Industrielle Transformation','Stahlstandort Deutschland','Wasserstoffwirtschaft','Industrielle Dekarbonisierung','Eisenschwamm','Stahlschrott','Schrottrecycling','Circular Economy','Circularity','CO2-Armer Stahl','Klimaneutraler Stahl','Scope 3','Gunnar Groebler']
 make_choice = st.sidebar.selectbox('Select your keyword:', makes)
 
-kath_brienne_df_copy= kath_brienne_df.loc[kath_brienne_df['keyword'] == make_choice]
+if make_choice == 'All':
+    kath_brienne_df_copy= kath_brienne_df.loc[kath_brienne_df['category'] == 'Content']
+
+
+else:
+    kath_brienne_df_copy= kath_brienne_df.loc[kath_brienne_df['keyword'] == make_choice]
+	
 num_posts = kath_brienne_df_copy.shape[0]
 st.write(f'Total number of posts found: ', str(num_posts))
 
