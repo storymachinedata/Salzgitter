@@ -288,3 +288,34 @@ def printAccountInfo(dataframe, option):
         st.image('https://img.freepik.com/premium-vector/hazard-warning-attention-sign-with-exclamation-mark-symbol-white_231786-5218.jpg?w=2000', width =200)
         st.subheader('Oops... No new post found for the selection.')
 
+
+def change_linkedin_url(url):
+    # Define the part to be replaced in URL 1
+    part_to_replace = "https://www.linkedin.com/feed/update/"
+
+    # Define the part to replace it with
+    replacement = "https://www.linkedin.com/embed/feed/update/"
+
+    return url.replace(part_to_replace, replacement)
+
+
+
+def embed_post(i, rows, dataframe):
+
+    
+    url = rows['postUrl']
+
+    url = change_linkedin_url(url)
+    st.write(url)
+
+    embed_code =f'''<div style="position:relative;overflow:hidden;padding-top:56.25%;">
+    <iframe 
+    frameborder="0"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+    src={url}
+    ></iframe>
+    </div>'''
+
+    st.markdown(embed_code, unsafe_allow_html=True)
+
+  

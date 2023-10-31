@@ -1,7 +1,8 @@
 
 import streamlit as st
 import datetime as dt
-from helpers import *
+#from helpers import *
+from helper_new import *
 
 
 
@@ -49,25 +50,17 @@ kath_brienne_df = kath_brienne_df.sort_values(by = ['yy-dd-mm','Total Interactio
 
 kath_brienne_df = kath_brienne_df.reset_index(drop=True)
 kath_brienne_df_copy = kath_brienne_df.copy()
-#num_posts = kath_brienne_df_copy.shape[0]
-#st.write(f'Total number of posts found: ', str(num_posts))
 
 
+# makes = ['All','Grüner Stahl','Green Steel','Salzgitter AG','Direktredduktionsanlage','Salcos','Elektrolichtbogenofen','Grüner Wasserstoff','Industrielle Transformation','Stahlstandort Deutschland','Wasserstoffwirtschaft','Industrielle Dekarbonisierung','Eisenschwamm','Stahlschrott','Schrottrecycling','Circular Economy','Circularity','CO2-Armer Stahl','Klimaneutraler Stahl','Scope 3','Gunnar Groebler']
+# make_choice = st.sidebar.selectbox('Select your keyword:', makes)
+
+# if make_choice == 'All':
+#     kath_brienne_df_copy= kath_brienne_df.loc[kath_brienne_df['category'] == 'Content']
 
 
-#print(kath_brienne_df)
-
-#
-
-makes = ['All','Grüner Stahl','Green Steel','Salzgitter AG','Direktredduktionsanlage','Salcos','Elektrolichtbogenofen','Grüner Wasserstoff','Industrielle Transformation','Stahlstandort Deutschland','Wasserstoffwirtschaft','Industrielle Dekarbonisierung','Eisenschwamm','Stahlschrott','Schrottrecycling','Circular Economy','Circularity','CO2-Armer Stahl','Klimaneutraler Stahl','Scope 3','Gunnar Groebler']
-make_choice = st.sidebar.selectbox('Select your keyword:', makes)
-
-if make_choice == 'All':
-    kath_brienne_df_copy= kath_brienne_df.loc[kath_brienne_df['category'] == 'Content']
-
-
-else:
-    kath_brienne_df_copy= kath_brienne_df.loc[kath_brienne_df['keyword'] == make_choice]
+# else:
+#     kath_brienne_df_copy= kath_brienne_df.loc[kath_brienne_df['keyword'] == make_choice]
 	
 num_posts = kath_brienne_df_copy.shape[0]
 st.write(f'Total number of posts found: ', str(num_posts))
@@ -81,6 +74,6 @@ if  num_posts>0:
         thumbnails = st.columns(frames.shape[0])
         for i, c in frames.iterrows():
             with thumbnails[i]:
-                printFunction(i, c, frames)               
+                embed_post(c)               
 else:
-    printError()
+    st.write('Error occured')
