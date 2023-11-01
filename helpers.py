@@ -24,7 +24,6 @@ def load_config(file_path='query_mapper.json'):
         return {}
     
 
-
 def getActualDate(url):
     a= re.findall(r"\d{19}", url)
     a = int(''.join(a))
@@ -55,6 +54,7 @@ def display_filters():
 
     return filter_day, filter_Interactions, filter_date
 
+
 def choice_selector(dataframe,choice='All'):
     if choice == 'All':
         selected_df = dataframe.loc[dataframe['category'] == 'Content']
@@ -65,25 +65,15 @@ def choice_selector(dataframe,choice='All'):
 
 
 def filter_and_sort_posts(df, filter_day, filter_Interactions, filter_date):
-    # Filter by days
-
     filtered_df = df[df['date'] >= (datetime.now() - dt.timedelta(days=filter_day))]
-    print('*'*20)
-    print(filter_day, filtered_df.shape)
-    print('*'*20)
 
-    # Define sorting criteria
     sorting_columns = ['yy-dd-mm', 'Total Interactions']
-    #ascending = [filter_date == 'Posts: Newest First', filter_Interactions == 'Total Interaction: High to Low']
     ascending=[ filters[filter_date][1], filters[filter_Interactions][1]]
-    # Sort the DataFrame
+
     sorted_df = filtered_df.sort_values(by=sorting_columns, ascending=ascending)
-    
-    # Reset the index
     sorted_df = sorted_df.reset_index(drop=True)
     
     return sorted_df
-
 
 
 @st.cache(ttl=7200)
@@ -123,17 +113,14 @@ def load_dataframe(filename):
     return df
 
 
-def display_info(rows):
-        
+def display_info(rows): 
         st.subheader(rows['fullName'])
-
         st.write(rows['title'])
         st.write('-----------')
         st.info(rows['textContent']) 
         st.write('Total Interactions 📈:  ',rows['Total Interactions']) 
         st.write('Likes 👍:  ',rows['likeCount']) 
         st.write('Comments 💬:  ',rows['commentCount']) 
-        #st.write('Arowstion 📌:  ',rows['arowstion']) 
         st.write('Publish Date & Time 📆:         ',rows['postDate']) 
 
         with st.expander('Link to this Post 📮'):
@@ -142,9 +129,7 @@ def display_info(rows):
                 st.write(rows['profileUrl']) 
 
 
-
 def display_post_chunks(df_filtered):
-      
     df_filtered.reset_index(drop=True, inplace=True)
     data_chunk = [df_filtered.iloc[i:i+3] for i in range(0, len(df_filtered), 3)]
     
