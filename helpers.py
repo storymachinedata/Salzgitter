@@ -50,9 +50,17 @@ discarded_profiles = []
 def read_file(filename):
     df =pd.read_csv(filename)
     df = df.dropna(how='any', subset=['textContent'])
+
     df.drop(['connectionDegree', 'timestamp'], axis=1, inplace=True)
 
     df = df[~df['profileUrl'].isin(discarded_profiles)]
+
+    if 'companyUrl' in df.columns:
+        df['profileUrl'].fillna(df['companyUrl'], inplace=True)
+        df['fullName'].fillna(df['companyName'], inplace=True)
+
+    df['title'].fillna(' ', inplace=True)
+
     df['postDate'] = df.postUrl.apply(getActualDate)
     df = df.dropna(how='any', subset=['postDate'])
     df['date'] =  pd.to_datetime(df['postDate'])
@@ -68,7 +76,7 @@ def read_file(filename):
     df['Keyword']  = df['category']
     df['yy-dd-mm'] = pd.to_datetime(df.date).dt.strftime('%Y/%m/%d')
 
-    df['keyword'] =  df['query'].apply(lambda x : mapper[x])
+    df['keyword'] =  df['query'].apply(lambda x : mapper[x] if x in mapper else x)
 
     
     return df
@@ -146,25 +154,9 @@ def getActualDate(url):
 
 def printFunction(i, rows, dataframe):
    
-    if not pd.isnull(rows['companyUrl']):
-        st.subheader(rows.companyName)
-        st.write('Company Account')
-      
-        st.info(rows['textContent'])
-        st.write('Total Interactions 📈:  ',rows['Total Interactions'])
-        st.write('Likes 👍:  ',rows['likeCount']) 
-        st.write('Comments 💬:  ',rows['commentCount'])
-        st.write('Publish Date & Time 📆:         ',rows['postDate']) #publishDate
-        with st.expander('Link to this Post 📮'):
-                st.write(rows['postUrl']) #linktoPost
-        with st.expander('Link to  Profile 🔗'):
-                st.write(rows['companyUrl']) #linktoProfile
-
-
-    if not pd.isnull(rows['profileUrl']):
-        #st.image(rows['profileImgUrl'], width=150)
         st.subheader(dataframe.fullName[i])
-        st.write('Personal Account')
+        #st.write('Personal Account')
+       
         st.write(rows['title']) #postType
         st.write('-----------')
        

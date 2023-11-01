@@ -39,12 +39,12 @@ with col3:
 
 
 
-mutares_emp_path = 'https://cache1.phantombooster.com/UhrenaxfEnY/JLfiphEk8jlUgrwTfub8MQ/salzgitter_accounts_6_27.csv'
+mutares_emp_path = 'https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/EQafnGzssfutlOPDc4DvUA/salzgitter_accounts.csv'
 
 
 
 #mutares_emp_main = read_file_sp(mutares_emp_path)
-mutares_emp_main = read_file_account(mutares_emp_path)
+mutares_emp_main = read_file(mutares_emp_path)
 
 
 mutares_emp_df = mutares_emp_main[mutares_emp_main['date']>=(dt.datetime.now()-dt.timedelta(days=filter_day))]
@@ -70,7 +70,7 @@ if  num_posts>0:
 		thumbnails = st.columns(frames.shape[0])
 		for i, c in frames.iterrows():
 			with thumbnails[i]:
-				printFunction_accounts(i, c, frames)           
+				printFunction(i, c, frames)           
 				#printFunction_posts(i, c, frames)        
 else:
 	printError()
